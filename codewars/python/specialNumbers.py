@@ -1,17 +1,19 @@
 def specialNums():
-    for special in range(10, 9999):
-        array = list(map(int, str(special)))
+    for i in range(10, 9999):
+        array = list(map(int, str(i)))
 
-        print(array)
+        is_special = True
+
+        for j in range(len(array) -1):
+            compare = array[j] - array[j +1]
+            if compare > 1 or compare < -1:
+                is_special = False
+                break
+
+        if is_special:
+            print(i)
         
-        # for i in range(len(array) - 1):
-        #     diff = array[i] - array[i + 1]
-        #     if diff > 1 or diff < -1:
-        #         break
-        #     print(special)
-
-
-
+    
 specialNums()
 
         # Write a function that prints all Special Numbers from 10 to 9999. A special number is a number whose each digit differs
