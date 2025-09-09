@@ -1,14 +1,24 @@
-const words = ["spray", "elite", "exuberant", "destruction", "present"];
+// const words = ["spray", "elite", "exuberant", "destruction", "present"];
 
-const result = words.filter((word) => word.length > 6);
+// const result = words.filter((word) => word.length > 6);
 
-console.log(result);
-// Expected output: Array ["exuberant", "destruction", "present"]
+// console.log(result);
+// // Expected output: Array ["exuberant", "destruction", "present"]
 
+// const sum = numbers.reduce((runningSum, number) => {
+//   return runningSum + number;
+// }, 0); 
+const sumOfOdds = (arr) => {
+    const theOdds = arr.filter((odds) => odds % 2 !== 0);
+    
+    theOdds.reduce((runningSum, odd) => {
+        runningSum + odd;
+    });
 
-// const sumOfOdds = () => {
+    console.log(theOdds)
+}
 
-// }
+sumOfOdds([12, 7, 5, 64, 14, 3, 27, 8]);
 
 // ### **Question #5**
 // Write a function that accepts an array of integers.
