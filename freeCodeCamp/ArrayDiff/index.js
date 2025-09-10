@@ -23,6 +23,25 @@
 // }
 
 const arrayDiff = (arr1, arr2) =>{
+
+    const arr1Set = new Set(arr1)
+    const arr2Set = new Set(arr2)
+
+    const answer = []
+
+    for(const item of arr1Set){
+        if(!arr2Set.has(item)){
+            answer.push(item)
+        }
+    }
+    for(const item of arr2Set){
+        if(!arr1Set.has(item)){
+            answer.push(item)
+        }
+    }
+    answer.sort()
+    console.log(answer)
+    // return answer
     
 }
 
