@@ -5,7 +5,19 @@
 // Ignore letter casing in the word or sentence.
 
 function isPangram(sentence, letters) {
-    
+  const newSentence = sentence.toLowerCase()
+  const newLetters = letters.toLowerCase()
+  const sentenceSet = new Set()
+  const letterSet = new Set(newLetters)
 
-  return sentence;
+  for (let i = 0; i < newSentence.length; i++) {
+    const char = newSentence[i];
+    if (char >= 'a' && char <= 'z') {
+      sentenceSet.add(char)
+    }
+  }
+  console.log(sentenceSet.size === letterSet.size)
+  return sentenceSet.size === letterSet.size
 }
+
+isPangram("hello", "helo")
