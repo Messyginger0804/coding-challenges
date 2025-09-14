@@ -5,6 +5,7 @@
 // If the average of any three days in a row is greater than or equal to 8 hours, it’s too much.
 // If the average of the seven days is greater than or equal to 6 hours, it's too much.
 
+
 function tooMuchScreenTime(hours) {
     const dailyLimit = (over) => over >= 10;
     if(hours.some(dailyLimit)){
@@ -16,18 +17,18 @@ function tooMuchScreenTime(hours) {
     const sum = hours.reduce((total, current) => total + current, initialValue)
     const average = sum / hours.length
 
-    console.log(average)
-
-    if(average >= 6){
-      return true
+    if (hours.length >= 3) {
+    let sum = hours[0] + hours[1] + hours[2];
+    if (sum / 3 >= 8) return true;
+    for (let i = 3; i < hours.length; i++) {
+      sum += hours[i] - hours[i - 3];
+      if (sum / 3 >= 8) return true;
     }
-
-    
-
   }
 
-// tooMuchScreenTime([3, 3, 5, 8, 8, 9, 4])
+    if(average >= 6)return true
 
-// tooMuchScreenTime([1, 2, 3, 11, 1, 3, 4])
+    return false
+  }
 
 tooMuchScreenTime([3, 9, 4, 8, 5, 7, 6])
