@@ -4,4 +4,16 @@
 # Ignore non-alphabetical characters in the word or sentence.
 # Ignore letter casing in the word or sentence.
 
+def is_pangram(sentence, letters):
+    newSentence = sentence.lower()
+    newLetters = letters.lower()
 
+    sentenceSet = set()
+
+    for symbol in newSentence:
+        if symbol.isalpha():
+            sentenceSet.add(symbol)
+
+    return len(sentenceSet) == len(newLetters)
+
+is_pangram("hello", "helo")
