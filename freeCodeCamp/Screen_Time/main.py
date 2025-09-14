@@ -18,7 +18,7 @@ def too_much_screen_time(hours):
     for i in range(len(hours) - 2):
         windowTotal = hours[i] + hours[i+1] + hours[i+2]
         windowAverage = windowTotal / 3
-        if windowAverage / 3 >= 8:
+        if windowAverage >= 8:
             print(True)
             return True
 
