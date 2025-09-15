@@ -5,3 +5,22 @@
 # The original vowel should keeps its case.
 # Repeated vowels should be lowercase.
 # All non-vowel characters should keep their original case.
+
+def repeat_vowels(s):
+    vowels = {'a', 'e', 'i', 'o', 'u'}
+    vowelCount = 0
+    answer = ''
+
+    for char in s:
+        lower = char.lower()
+        if lower in vowels:
+            vowelCount += 1
+            answer += char + lower * (vowelCount - 1)
+        else:
+            answer = answer + char
+
+    print(answer)
+
+    return answer
+
+repeat_vowels("hello world")
