@@ -17,10 +17,12 @@
 // reverseSentence("npm  install  sudo")
 
 function reverseSentence(sentence) {
-    const workdsWithGaps = sentence.split(' ')
-    const cleanWords = workdsWithGaps.filter(word => word !== '')
+    const wordsWithGaps = sentence.split(' ')
+    const cleanWords = wordsWithGaps.filter(word => word !== '')
 
     const reverseWords = cleanWords.reverse()
+
+    word.reverse()
 
     const result = reverseWords.join(' ')
 

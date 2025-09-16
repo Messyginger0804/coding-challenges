@@ -5,22 +5,44 @@
 // The returned array should be in ascending order.
 // If no integers are missing, return an empty array.
 
-function findMissingNumbers(arr) {
-  if (arr.length === 0) return []
+// function findMissingNumbers(arr) {
+//   if (arr.length === 0){ 
+//     return []
+//   }
 
-    let maxNum = Math.max(...arr)
-    const set = new Set(arr)
+//     let maxNum = Math.max(...arr)
+//     const set = new Set(arr)
 
-    let missingNums = []
+//     let missingNums = []
 
-    for (let i = 1; i <= maxNum; i++) {
-      if (!set.has(i)) {
-        missingNums.push(i);
-      }
-    }
-    console.log(missingNums)
+//     for (let i = 1; i <= maxNum; i++) {
+//       if (!set.has(i)) {
+//         missingNums.push(i);
+//       }
+//     }
+//     console.log(missingNums)
 
-    return missingNums
-}
+//     return missingNums
+// }
 
-findMissingNumbers([1, 3, 5])
+// findMissingNumbers([1, 3, 5])
+
+
+// if the array is in chrono order return true if not return false
+const arr = [1, 2, 3, 6]
+const fuckingFunction = (arr) => {
+
+  for(let i = 0; i < arr.length; i++){
+      // console.log(arr[i])
+          for(let j = 1; j < arr.length; j++){
+                if(!j === i+1){
+                        console.log(false)
+                                return false
+                                      } 
+                                            console.log(true)
+                                                  return true
+                                                      }
+                                                        }
+                                                        }
+
+                                                        fuckingFunction(arr)
