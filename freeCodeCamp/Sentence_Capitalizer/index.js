@@ -5,6 +5,22 @@
 // Sentences can end with a period (.), one or more question marks (?), or one or more exclamation points (!).
 
 function capitalize(paragraph) {
+  let capitalize = true
+  let result = ''
 
-  return paragraph;
+    for(let char of paragraph){
+      let isLetter = char >= 'a' && char <= 'z'
+      if(isLetter && capitalize){
+        result += char.toUpperCase()
+        capitalize = false
+      } else {
+        result += char
+      }
+
+      if(char === '.' || char === '?' || char === '!') capitalize = true
+    }
+  console.log(result)
+  return result;
 }
+
+capitalize("this is a simple sentence.")
